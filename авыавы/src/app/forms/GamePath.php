@@ -5,37 +5,37 @@ use bundle\windows\Registry;
 use bundle\windows\Windows;
 use php\lib\fs;
 use std, gui, framework, app;
+use php\gui\event\UXEvent; 
 
 
 class GamePath extends AbstractForm
 {
 
     /**
-     * @event button.click-Left 
+     * @event buttonAlt.action 
      */
-    function doButtonClickLeft(UXMouseEvent $e = null)
-    {
-        $game_path = $this->edit->text; // НЕ ТРОГАТЬ
-        if(fs::isFile("$game_path")) // НЕ ТРОГАТЬ
+    function doButtonAltAction(UXEvent $e = null)
+    {    
+        $game_path = $this->fileChooser->execute();
+         $this->edit->text = $game_path;
+         if(fs::isFile($game_path)) // НЕ ТРОГАТЬ
         {
-            if(fs::exists("$game_path")) // НЕ ТРОГАТЬ
-            {
-                Registry::of('HKEY_CURRENT_USER\Software\www.gtasrv.ru\CR-MP\GenerationC')->add('game_path', $game_path); // НЕ ТРОГАТЬ
-                app()->hideForm('GamePath'); // НЕ ТРОГАТЬ
-                app()->showForm('MainForm'); // НЕ ТРОГАТЬ
-            }
-            else UXDialog::show('Выберите путь к игре!'); // НЕ ТРОГАТЬ      
+         $this->ini->set('game_path', $game_path, 'settings');
+         app()->hideForm('GamePath');
+        app()->showForm('MainForm'); 
         }
         else UXDialog::show('Выберите путь к игре!'); // НЕ ТРОГАТЬ
     }
+
+
+    
 
     /**
      * @event show 
      */
     function doShow(UXWindowEvent $e = null)
     {    
-        $game_path = Registry::of('HKEY_CURRENT_USER\Software\www.gtasrv.ru\CR-MP\GenerationC')->read('game_path'); // НЕ ТРОГАТЬ
-        if($game_path) app()->hideForm('GamePath'); app()->showForm('MainForm'); // НЕ ТРОГАТЬ
+        $game_path = $this->ini->get('game_path','settings'); // НЕ ТРОГАТЬ
     }
 
     /**
@@ -43,7 +43,7 @@ class GamePath extends AbstractForm
      */
     function doImageClickLeft(UXMouseEvent $e = null)
     {    
-        app()->shutdown(); // НЕ ТРОГАТЬ  
+        app()->hideForm($this->getContextFormName());
     }
 
     /**
@@ -51,9 +51,9 @@ class GamePath extends AbstractForm
      */
     function doImageAltClickLeft(UXMouseEvent $e = null)
     {    
-        app()->hideForm('GamePath'); // НЕ ТРОГАТЬ
-        app()->showForm('MainForm'); // НЕ ТРОГАТЬ
+      app()->hideForm($this->getContextFormName());
     }
+
 
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project author="dimak" authorOS="Windows 10" createdAt="1575231984741" ideName="DevelNext" ideVersion="16.7.0" ideVersionHash="2017103112" name="LRPLaucher" packageName="app" template="ide\project\templates\DefaultGuiProjectTemplate" updatedAt="1598263451095">
+<project author="dimak" authorOS="Windows 10" createdAt="1575231984741" ideName="DevelNext" ideVersion="16.7.0" ideVersionHash="2017103112" name="LRPLaucher" packageName="app" template="ide\project\templates\DefaultGuiProjectTemplate" updatedAt="1598271814298">
   <tree>
     <expanded>
     <path src=""/>
@@ -10,15 +10,15 @@
       <path src="/src/app/forms"/>
       <path src="/src/app/modules"/>
       <path src="/src/bundle"/>
-      <path src="/src/bundle/windows"/>
+      <path src="/vendor"/>
     </expanded>
   </tree>
   <openedFiles>
   <file src="LRPLaucher.dnproject"/>
     <file src="src/app/modules/MainModule.php"/>
-    <file src="src/app/forms/MainForm.php"/>
-    <file selected="1" src="src/app/forms/GamePath.php"/>
-    <file src="src/app/modules/GamePath.php"/>
+    <file selected="1" src="src/app/forms/MainForm.php"/>
+    <file src="src/app/forms/GamePath.php"/>
+    <file src="config.ini"/>
   </openedFiles>
   <files/>
   <behaviours>

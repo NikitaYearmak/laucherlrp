@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?import javafx.scene.*?><?import javafx.collections.*?><?import javafx.scene.layout.*?><?import javafx.scene.control.*?><?import javafx.scene.text.*?><?import javafx.scene.image.*?><?import javafx.scene.shape.*?><?import javafx.scene.paint.*?><?import javafx.scene.web.*?><?import javafx.geometry.*?><?import java.lang.*?><?import org.develnext.jphp.ext.javafx.classes.data.*?><?import org.develnext.jphp.ext.javafx.support.*?><?import org.develnext.jphp.ext.javafx.support.control.*?><?import org.develnext.jphp.ext.game.support.*?><AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" focusTraversable="false" id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="208" prefWidth="384" styleClass="">
   <children>
-    <FlatButton alignment="CENTER" clickColor="#000000" color="#808080" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#4d4d4d" id="button" layoutX="232" layoutY="88" prefHeight="32" prefWidth="144" styleClass="x-flat-button " text="ПРИМЕНИТЬ" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
-      <font>
-        <Font name="Arial Black" size="14"/>
-      </font>
-    </FlatButton>
-    <Data cursor="DEFAULT" enabled="1" id="data-button" visible="1"/>
-    <FlatButton alignment="CENTER" clickColor="#000000" color="#808080" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#4d4d4d" id="buttonAlt" layoutX="8" layoutY="88" prefHeight="32" prefWidth="144" styleClass="x-flat-button " text="УКАЗАТЬ" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+    <FlatButton alignment="CENTER" clickColor="#000000" color="#808080" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#4d4d4d" id="buttonAlt" layoutX="120" layoutY="88" prefHeight="32" prefWidth="144" styleClass="x-flat-button " text="УКАЗАТЬ" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
       <font>
         <Font name="Arial Black" size="14"/>
       </font>

@@ -1,10 +1,10 @@
-<project name="Launcher for GTA" basedir=".">
+<project name="LRPLaucher" basedir=".">
     <!-- set global properties for this build -->
-    <property name="name" location="Launcher for GTA"/>
+    <property name="name" location="LRPLaucher"/>
     <property name="build" location="build"/>
     <property name="dist" location="build/dist"/>
-    <property name="launch4j.dir" location="D:\Programs\DevelNext\tools\Launch4j" />
-    <property name="jre.dir" location="D:\Programs\DevelNext\tools\jre" />
+    <property name="launch4j.dir" location="C:\Program Files (x86)\DevelNext\tools\Launch4j" />
+    <property name="jre.dir" location="C:\Program Files (x86)\DevelNext\tools\jre" />
 
     <taskdef name="launch4j"
              classname="net.sf.launch4j.ant.Launch4jTask"
@@ -21,11 +21,14 @@
         <jar destfile="${dist}/lib/dn-compiled-module.jar" encoding="UTF-8" level="7">
             	<fileset dir='src_generated' excludes='.debug/** **/*.source **/*.sourcemap **/*.axml **/*.php' erroronmissingdir='false'/>
 	<fileset dir='src' excludes='.debug/** **/*.source **/*.sourcemap **/*.axml **/*.php' erroronmissingdir='false'/>
+	<fileset dir='vendor/ide.bundle.std.JPHPDesktopDebugBundle' excludes='.debug/** **/*.source **/*.sourcemap **/*.axml **/*.php' erroronmissingdir='false'/>
 	<fileset dir='vendor/ide.bundle.std.JPHPCoreBundle' excludes='.debug/** **/*.source **/*.sourcemap **/*.axml **/*.php' erroronmissingdir='false'/>
 	<fileset dir='vendor/ide.bundle.std.JPHPRuntimeBundle' excludes='.debug/** **/*.source **/*.sourcemap **/*.axml **/*.php' erroronmissingdir='false'/>
 	<fileset dir='vendor/ide.bundle.std.JPHPJsonBundle' excludes='.debug/** **/*.source **/*.sourcemap **/*.axml **/*.php' erroronmissingdir='false'/>
 	<fileset dir='vendor/ide.bundle.std.JPHPXmlBundle' excludes='.debug/** **/*.source **/*.sourcemap **/*.axml **/*.php' erroronmissingdir='false'/>
 	<fileset dir='vendor/ide.bundle.std.UIDesktopBundle' excludes='.debug/** **/*.source **/*.sourcemap **/*.axml **/*.php' erroronmissingdir='false'/>
+	<fileset dir='vendor/develnext.bundle.game2d.Game2DBundle' excludes='.debug/** **/*.source **/*.sourcemap **/*.axml **/*.php' erroronmissingdir='false'/>
+	<fileset dir='vendor/develnext.bundle.httpclient.HttpClientBundle' excludes='.debug/** **/*.source **/*.sourcemap **/*.axml **/*.php' erroronmissingdir='false'/>
 	<fileset dir='vendor/develnext.bundle.windows.WindowsBundle' excludes='.debug/** **/*.source **/*.sourcemap **/*.axml **/*.php' erroronmissingdir='false'/>
 
         </jar>
@@ -36,10 +39,10 @@
     </target>
 
     <target name="onejar" depends="dist">
-        <jar destfile="${dist}/Launcher for GTA.jar" duplicate="preserve" level="7" encoding="UTF-8">
+        <jar destfile="${dist}/LRPLaucher.jar" duplicate="preserve" level="7" encoding="UTF-8">
             <fileset dir="${dist}/gen" />
             <zipfileset src="${dist}/lib/dn-compiled-module.jar" />
-            <zipfileset src='${dist}/lib/asm-all.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/jphp-core.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/jphp-runtime.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/dn-php-sdk.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/gson.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/jphp-json-ext.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/jphp-xml-ext.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/jphp-gui-ext.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/jphp-desktop-ext.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/jphp-zend-ext.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/jphp-app-framework.jar' excludes='JPHP-INF/sdk/** **/*.php' />
+            <zipfileset src='${dist}/lib/asm-all.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/jphp-core.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/jphp-runtime.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/dn-php-sdk.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/gson.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/jphp-json-ext.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/jphp-xml-ext.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/jphp-gui-ext.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/jphp-desktop-ext.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/jphp-zend-ext.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/jphp-app-framework.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/dyn4j.jar' excludes='JPHP-INF/sdk/** **/*.php' /> <zipfileset src='${dist}/lib/jphp-game-ext.jar' excludes='JPHP-INF/sdk/** **/*.php' />
 
             <manifest>
                 <attribute name="Main-Class" value="org.develnext.jphp.ext.javafx.FXLauncher" />
@@ -63,9 +66,9 @@
 
     <target name="launch4j">
         <launch4j>
-            <config headerType="gui" outfile="${dist}/Launcher for GTA.exe"
-                    dontWrapJar="false" jarPath="${dist}/Launcher for GTA.jar" chdir="."
-                    downloadUrl="http://java.com/download" icon="C:\Users\dimak\AppData\Local\Temp\ab1faa1e-b7dc-4412-a1fa-8a4c21e83db74837564101816789865.ico">
+            <config headerType="gui" outfile="${dist}/LRPLaucher.exe"
+                    dontWrapJar="true" jarPath="" chdir="."
+                    downloadUrl="http://java.com/download" >
                 <classPath mainClass="org.develnext.jphp.ext.javafx.FXLauncher">
                     <cp>lib/*</cp>
                 </classPath>
@@ -74,7 +77,7 @@
                 </jre>
             </config>
         </launch4j>
-        <delete file="${dist}/Launcher for GTA.jar" failonerror="false" />
+        <delete file="" failonerror="false" />
         <delete dir="${dist}/gen" failonerror="false" />
     </target>
 </project>
