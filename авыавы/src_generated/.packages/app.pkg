@@ -1,0 +1,5 @@
+[classes]
+app\forms\GamePath
+app\forms\MainForm
+app\modules\AppModule
+app\modules\MainModule

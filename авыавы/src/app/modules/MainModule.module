@@ -1,10 +1,32 @@
 {
   "props": [],
   "components": {
+    "ini": {
+      "type": "script\\storage\\IniStorage",
+      "x": 256.0,
+      "y": 32.0,
+      "props": {
+        "path": "config.ini",
+        "autoSave": "1",
+        "multiLineValues": "1"
+      }
+    },
+    "fileChooser": {
+      "type": "script\\FileChooserScript",
+      "x": 192.0,
+      "y": 32.0,
+      "props": {
+        "filterName": "Все файлы",
+        "filterExtensions": "*.*",
+        "filterAny": "0",
+        "inputNode": "",
+        "actionNode": ""
+      }
+    },
     "dirChooser": {
       "type": "script\\DirectoryChooserScript",
-      "x": 112.0,
-      "y": 32.0,
+      "x": 112,
+      "y": 32,
       "props": {
         "inputNode": "",
         "actionNode": ""
@@ -12,8 +34,8 @@
     },
     "downloader": {
       "type": "bundle\\http\\HttpDownloader",
-      "x": 32.0,
-      "y": 32.0,
+      "x": 32,
+      "y": 32,
       "props": {
         "threadCount": "4"
       }
