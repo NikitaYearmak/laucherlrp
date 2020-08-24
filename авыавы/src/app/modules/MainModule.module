@@ -1,0 +1,22 @@
+{
+  "props": [],
+  "components": {
+    "dirChooser": {
+      "type": "script\\DirectoryChooserScript",
+      "x": 112.0,
+      "y": 32.0,
+      "props": {
+        "inputNode": "",
+        "actionNode": ""
+      }
+    },
+    "downloader": {
+      "type": "bundle\\http\\HttpDownloader",
+      "x": 32.0,
+      "y": 32.0,
+      "props": {
+        "threadCount": "4"
+      }
+    }
+  }
+}
